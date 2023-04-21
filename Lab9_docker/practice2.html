@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Practice 2</title>
+    </head>
+    <body>
+        <input type="button" onclick="location.href='index.html'" value="Go Back" id="back"/>
+        <br><br>
+        <div id="paragraphDiv" style="border: solid">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore 
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <br><br>
+        <label for="dred" id="dredlabel">Border Red Value (0 - 255): </label>
+        <input type="text" id="dred" name="dred">
+        <br><br>
+        <label for="dgreen" id="dgreenlabel">Border Green Value (0 - 255): </label>
+        <input type="text" id="dgreen" name="dgreen">
+        <br><br>
+        <label for="dblue" id="dbluelabel">Border Blue Value (0 - 255): </label>
+        <input type="text" id="dblue" name="dblue">
+        <br><br>
+        <label for="borderWidth" id="borderLabel">Border Width: </label>
+        <input type="text" id="borderWidth" name="borderWidth">
+        <br><br>
+        <label for="bred" id="bredlabel">Background Red Value (0 - 255): </label>
+        <input type="text" id="bred" name="bred">
+        <br><br>
+        <label for="bgreen" id="bgreenlabel">Background Green Value (0 - 255): </label>
+        <input type="text" id="bgreen" name="bgreen">
+        <br><br>
+        <label for="bblue" id="bbluelabel">Background Blue Value (0 - 255): </label>
+        <input type="text" id="bblue" name="bblue">
+        <br><br>
+        <button onclick="updateColor()">Change the Color!</button>
+    </body>
+    <script>
+        let para = document.getElementById("paragraphDiv");
+        function updateColor()
+        {
+            para.style.borderColor = `rgb(${document.getElementById("dred").value}, ${document.getElementById("dgreen").value}, ${document.getElementById("dblue").value})`;
+            para.style.borderWidth = document.getElementById("borderWidth").value;
+            para.style.backgroundColor = `rgb(${document.getElementById("bred").value}, ${document.getElementById("bgreen").value}, ${document.getElementById("bblue").value})`;
+        }
+    </script>
+</html>

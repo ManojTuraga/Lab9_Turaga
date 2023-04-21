@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Practice 1</title>
+    </head>
+    <body>
+        <div id="container">
+            <input type="button" onclick="location.href='index.html'" value="Go Back" id="back"/>
+            <h1 id="aboutme">Please click the links to learn about me!</h1>
+            <img src="profile.jpg" id="profileimg">
+            <div id="buttons">
+                <button id="about" value="about" onclick="showAbout()">About Me</button>
+                <br><br>
+                <button id="contact" value="contact" onclick="showContact()">Contact Info</button>
+                <br><br>
+                <button id="contact" value="projects" onclick="showProjects()">Personal Projects</button>
+                <br><br>
+                <button id="about" value="video" onclick="showVideo()">Video link</button>
+            </div>
+            <div id="texts">
+            </div>
+        </div>
+    </body>
+    <!-- Credits to 'https://blog.hubspot.com/website/css-fade-in' for the fade transition -->
+    <!-- Credits to 'https://stackoverflow.com/questions/14123999/center-a-div-horizontally-and-vertically' for centering a div --> 
+    <style>
+        #container
+        {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        #profileimg
+        {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            top: 25%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            animation: fadeIn 5s;
+        }
+        @keyframes fadeIn 
+        {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        #aboutme
+        {
+            position: relative;
+            top: 10%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            animation: fadeIn 2s;
+            text-align: center;
+        }
+        #buttons
+        {
+            position: relative;
+            top: 35%;
+            left: 25%;
+            width: 10%;
+            height: 20%;
+            animation: fadeIn 6s;
+        }
+        #texts
+        {
+            position: relative;
+            top: 7%;
+            left: 50%;
+            width: 600px;
+            height: 300px;
+            animation: fadeIn 6s;
+            border-style: solid;
+            padding: 2%;
+        }
+        #back
+        {
+            animation: fadeIn 5s;
+        }
+    </style>
+    <script>
+        showAbout();
+        function showAbout()
+        {
+            let doc = document.getElementById("texts");
+            doc.style.borderStyle = "solid";
+            doc.innerHTML = "<p style=\"font-size: 20px\">Hi, my name is Manoj Turaga."
+                                +"<br><br>I am a Second Year student at KU majoring at in CS."
+                                +"<br><br>Currently, I am a Software Engineeing Intern at Garmin in Aviation Technologies."
+                                +"<br><br>My current tech stack uses C/C++, Python, and C#. I am also somewhat familiar in HTML/CSS/JS."
+                                +"<br><br>Click on the other buttons to learn more about me!</p>";
+
+        }
+        function showContact()
+        {
+            let doc = document.getElementById("texts");
+            doc.style.borderStyle = "solid";
+            doc.innerHTML = "<p style=\"font-size: 20px\">Here are following ways you can contact me:"
+                            +"<br><br><br>Phone: (913)-938-2039"
+                            +"<br><br>Email: manoj.turaga@ku.edu"
+                            +"<br><br><a href=\"https://www.linkedin.com/in/manoj-turaga/\">Take me to Manoj's LinkedIn</a></p>";
+        }
+        function showProjects()
+        {
+            let doc = document.getElementById("texts");
+            doc.style.borderStyle = "solid";
+            doc.innerHTML = "<p style=\"font-size: 20px\">Here are some of the personal projects that I have done:"
+                            +"<br>Please check out my <a href=\"https://github.com/ManojTuraga\">Github Profile</a>"
+                            +"<br><br><br><a href=\"https://github.com/ManojTuraga/priority_agenda\">Priority Agenda</a>: This is a Web App that uses the Flask Web API to create a site to store your tasks. The tasks are sorted in a priority queue and it automatically determiens the priority of your tasks."
+                            +"<br><br><a href=\"https://github.com/ManojTuraga/UNO-The-CLI-Game\">CLI UNO:</a>This project brings the classic game of UNO! to the Command Line. Take turns playing a round of UNO® with a group of 2 to 10 people and try to be the first to clear your hand.</p>";
+        }
+        function showVideo()
+        {
+            let doc = document.getElementById("texts");
+            doc.style.borderStyle = "none";
+            doc.innerHTML = "<iframe style=\"width: 500px; height: 250px;\" src=\"https://www.youtube.com/embed/3UIpZxE2X5M\" title=\"Radioactive but I&#39;m Waking Up (full version)\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
+        }
+    </script>
+</html>

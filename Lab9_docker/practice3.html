@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Practice 3</title>
+    </head>
+    <body>
+        <input type="button" onclick="location.href='index.html'" value="Go Back" id="back"/>
+        <br><br>
+        <label for="password1" id="p1label">First Password: </label>
+        <input type="text" id="password1" name="password1">
+        <br><br>
+        <label for="password2" id="p2label">Second Password: </label>
+        <input type="text" id="password2" name="password2">
+        <br><br>
+        <button onclick="checkPassword()">Validate Your Passwords</button>
+    </body>
+    <style>
+    </style>
+    <script>
+        function checkPassword()
+        {
+            if (document.getElementById("password1").value.length < 8)
+            {
+                alert("The length of the first password is less than 8 characters");
+            }
+            else if (document.getElementById("password2").value.length < 8)
+            {
+                alert("The length of the second password is less than 8 characters");
+            }
+            else if (document.getElementById("password1").value != document.getElementById("password2").value)
+            {
+                alert("The two passwords are different");
+            }
+            else
+            {
+                alert("Everything is good!");
+            }
+        }
+    </script>
+</html>
